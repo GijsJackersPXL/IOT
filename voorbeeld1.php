@@ -29,5 +29,23 @@
             </form>
         <?php
     }
+
+    $sql = "select id, word, score from example order by score desc";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0){
+        //output data of each row
+        while($row = $result->fetch_assoc()){
+            ?>
+                <a href="?id=<?php print ($row["id"] ); ?>">
+                    <?php print ($row["word"]); ?>
+                    <i>(<?php print( $row["score"]); ?>)</i>
+                </a><br/>
+            <?php
+        }
+    }
+    else{
+        echo "0 results"
+    }
     $conn->close();
 ?>
