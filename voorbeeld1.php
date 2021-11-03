@@ -15,7 +15,7 @@
     if (insset( $_GET['word'])){
             $sql = "insert into example (word, time, score) values('" . $_GET['word'] . "', now(), 0 )";
             
-            if ($conn->quey($sql) == TRUE){
+            if ($conn->quey($sql) === TRUE){
                 echo "New record created successfully";
             }
             els{
