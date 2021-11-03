@@ -1,15 +1,23 @@
 <html>
     <head>
-        <title>Test</title>
+        <title>JavaScriptTest</title>
         <script>
             function clicked(){
-                document.getElementById("1").hidden = true;
+                if (document.getElementById("verborgen").hidden == true){
+                    document.getElementById("verborgen").hidden = false;
+                    document.getElementById("klik").innerText = "Klik op mijn om te verbergen."
+                }
+                else{
+                    document.getElementById("verborgen").hidden = true;
+                    document.getElementById("klik").innerText = "Klik op mij!"
+                }
+                
             }
         </script>
     </head>
     <body>
-        <h1 id="1">Hello World!</h1>
-        <h1 id="2" onclick="clicked()">Hallo Wereld!</h1>
-        <script>alert("PIEP");</script>
+        <h1 id="klik" onclick="clicked()">Klik op mij!</h1>
+        <h1 id="verborgen" hidden>Dit was hidden</h1>
+        <script>alert("MELDING");</script>
     </body>
 </html>
