@@ -1,0 +1,19 @@
+CREATE TABLE GegevensIOT (
+GegevensID int NOT NULL AUTO_INCREMENT,
+Naam varchar(255),
+Locatie varchar(255),
+Plaats varchar(255),
+Land varchar(255),
+Email varchar(255),
+DateOfUpload date,
+PRIMARY KEY (GegevensID)
+)
+
+ALTER TABLE GegevensIOT 
+ADD Tijd time;
+
+INSERT INTO GegevensIOT (Naam, Locatie, Plaats, Land, Email, DateOfUpload, Tijd)
+VALUES ('Gijs Jackers', 'Riemst', 'Thuis', 'België', 'gijs.jackers@student.pxl.be', Now(),Now());
+
+INSERT INTO GegevensIOT (Naam, Locatie, Plaats, Land, Email, DateOfUpload, Tijd)
+VALUES ('Gijs2 Jackers', 'Riemst', 'Thuis', 'België', 'gijs.jackers@student.pxl.be', now(),now());
