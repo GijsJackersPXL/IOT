@@ -15,5 +15,5 @@ ADD Tijd time;
 INSERT INTO GegevensIOT (Naam, Locatie, Plaats, Land, Email, DateOfUpload, Tijd)
 VALUES ('Gijs Jackers', 'Riemst', 'Thuis', 'België', 'gijs.jackers@student.pxl.be', Now(),Now());
 
-INSERT INTO GegevensIOT (Naam, Locatie, Plaats, Land, Email, DateOfUpload, Tijd)
-VALUES ('Gijs2 Jackers', 'Riemst', 'Thuis', 'België', 'gijs.jackers@student.pxl.be', now(),now());
+INSERT INTO GegevensIOT (SensorID, WaardeSensor, Naam, Locatie, Plaats, Land, Email, DatumUpload, Tijd)
+VALUES (1,'10.6', 'Gijs Jackers', 'Riemst', 'Thuis', 'België', 'gijs.jackers@student.pxl.be', Now(),Now());
