@@ -10,8 +10,8 @@
         die("connection failed: " . $conn->connect-error);
     }
     
-    $sql = "INSERT INTO GegevensIOT (WaardeSensor, Naam, Locatie, Plaats, Land, Email, DateOfUpload, Tijd)
-            VALUES ('10.6', 'Gijs Jackers', 'Riemst', 'Thuis', 'België', 'gijs.jackers@student.pxl.be', Now(),Now());
+    $sql = "INSERT INTO GegevensIOT (SensorID, WaardeSensor, Naam, Locatie, Plaats, Land, Email, DatumUpload, Tijd)
+            VALUES (1,'10.6', 'Gijs Jackers', 'Riemst', 'Thuis', 'België', 'gijs.jackers@student.pxl.be', Now(),Now());
     
     if ($conn->quey($sql) === TRUE){
         echo "New record created successfully";
