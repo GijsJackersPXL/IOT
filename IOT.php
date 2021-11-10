@@ -14,7 +14,7 @@
     }
     
     //input inlezen
-    if (insset( $_GET['WaardeSensor']) && $_GET['WaardeSensor'] != ''){
+    if (isset( $_GET['WaardeSensor']) && $_GET['WaardeSensor'] != ''){
         $sql = "insert into GegevensIOT (WaardeSensor, Naam, DatumUpload, Tijd) 
                 values('" . $_GET['WaardeSensor'] . "', 'Website', now(), now() )";
         
