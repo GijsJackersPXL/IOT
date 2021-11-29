@@ -10,18 +10,19 @@
         die("connection failed: " . $conn->connect-error);
     }
 
-    $sensorID = $_POST["ID"];
-    $waarde = $_POST["waarde"];
+    //$sensorID = $_POST["ID"];
+    //$waarde = $_POST["waarde"];
 
     //input inlezen
     if (isset( $_GET['ID']) && $_GET['waarde'] != ''){
         $sql = "insert into GegevensIOT (SensorID, WaardeSensor, DatumUpload, Tijd) 
-                values('" . $_GET["ID"] . "', '" . $_GET["waarde"] . "', now(), now() )";
+                values('AUTO_INCREMENT', '123', now(), now() )";
+        //values('" . $_GET["ID"] . "', '" . $_GET["waarde"] . "', now(), now() )";
         
         if ($conn->quey($sql) === TRUE){
             echo "New record created successfully";
         }
-        els{
+        else{
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
