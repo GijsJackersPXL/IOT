@@ -11,7 +11,7 @@ if($naam == "test" && $wachtwoord == "test")
 else
 {
 	echo "Error, Naam of wachtwoord is niet correct";
-	exit();
+    exit();
 }
 
 exit();
