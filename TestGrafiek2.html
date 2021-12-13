@@ -2,36 +2,48 @@
 <html>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <body>
-    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    <canvas id="grafiek" style="width:100%;max-width: 80%"></canvas>
 
 <script>
     var xValues = [0,1,2,3,4,5,6,7,8,9,10];
-    
-    new Chart("myChart", {
+    var yValues1 = [55, 49, 44, 24, 15];
+    var yValues2 = [3,7,2,5,6,4,2,1,2,1];
+    var namen = []
+
+    new Chart("grafiek", {
         type: "line",
         data: {
             labels: xValues,
-            datasets: 
-            [{ 
-            data: [1,2,3,4,5,6,7,8,9],
-            borderColor: "red",
-            fill: false
-            }, 
-            { 
-            data: [3,7,2,5,6,4,2,1,2,1],
-            borderColor: "blue",
-            fill: false
+            datasets: [{
+                label: "Rood",
+                data: yValues1,
+                borderColor: "red",
+                fill: false
+                },
+                {
+                label: "Blauw",
+                data: yValues2,
+                borderColor: "blue",
+                fill: false,
+                title: {
+                    display: true,
+                    text: "test",
+                    fontSize: 12
+                }
             }]
         },
         options: {
-            legend: {display: true},
+            legend: {
+                display: true,
+                 
+            },
             title: {
                 display: true,
                 text: "Gegevens IOT",
                 fontSize: 24
             },
             scales: {
-                yAxes: [{ ticks: { beginAtZero: false } }],
+                yAxes: [{ ticks: { beginAtZero: true } }],
                 xAxes: [{ ticks: { min: 0, max:60 }}]
             }
 
