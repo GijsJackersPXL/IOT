@@ -1,4 +1,4 @@
 HOST: 		        student.pxl-ea-ict.be
-GEBRUIKERSNAAM:     	admin@11901795.pxl-ea-ict.be
+GEBRUIKERSNAAM:     admin@11901795.pxl-ea-ict.be
 WW: 		        oBrGCikWH85f
 POORT: 		        21
