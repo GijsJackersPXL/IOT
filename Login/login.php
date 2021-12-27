@@ -3,7 +3,7 @@
 $naam = $_POST["username"];
 $wachtwoord = $_POST["password"];
 
-if($naam == "test" && $wachtwoord == "test")
+if($naam == "Gijs" && $wachtwoord == "admin")
 {
 	header("Location: index.html");
 	exit();

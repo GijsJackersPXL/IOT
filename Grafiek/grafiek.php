@@ -46,7 +46,7 @@ mysqli_close($conn);
             var options =  {
                 animationEnabled: true,
                 zoomEnabled: true,
-                theme: "dark1",
+                theme: "dark2",
                 title: {
                     text: "Gegevens IOT"
                 },

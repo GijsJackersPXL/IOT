@@ -21,7 +21,7 @@
         if ($conn->quey($sql) === TRUE){
             echo "New record created successfully";
         }
-        els{
+        else{
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
@@ -40,7 +40,7 @@
         }
     }
     else{
-        echo "0 results"
+        echo "0 results";
     }
     
     $conn->close();
