@@ -14,10 +14,7 @@
 
     //input inlezen
     if ($input != ''){ 
-        $sql = "insert into GegevensIOT (SensorID, WaardeSensor, DatumUpload, Tijd) 
-                values('AUTO_INCREMENT', '$input', now(), now() )";
-        
-                //values('" . $_GET["ID"] . "', '" . $_GET["waarde"] . "', now(), now() )";
+        $sql = "insert into GegevensIOT (SensorID, WaardeSensor, DatumUpload) values('1', '$input', now())";
         
         if ($conn->query($sql) === TRUE){
             echo "New record created successfully";
