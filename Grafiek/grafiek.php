@@ -19,7 +19,7 @@ $dataPoints = array();
 
 while($row = mysqli_fetch_array($result)) {
 	$Time = strtotime($row['DatumUpload'])*1000;
-	$dataPoints[] = array("x"=>$Time,"y"=>$row['WaardeSensor']);  	
+	$dataPoints[] = array("x" => $Time, "y" => $row['WaardeSensor']);  	
 }
 
 
@@ -40,64 +40,60 @@ mysqli_close($conn);
     <head>
         <script>
             window.onload = function() {
+                var dataPoints = [];
+                var options =  {
+                    animationEnabled: true,
+                    zoomEnabled: true,
+                    theme: "light",
+                    title: {
+                        text: "Gegevens IOT"
+                    },
+                    axisX: {
+                        title: "Tijdstip",
+                    },
 
-            var dataPoints = [];
+                    axisY: {
+                        title: "Waarde",
+                    },
 
-            var options =  {
-                animationEnabled: true,
-                zoomEnabled: true,
-                theme: "dark2",
-                title: {
-                    text: "Gegevens IOT"
-                },
-                axisX: {
-                    title: "Tijdstip",
-                },
+                    legend: {
+                        cursor: "pointer",
+                        itemclick: toggleDataSeries
+                    },
 
-                axisY: {
-                    title: "Waarde",
-                },
+                    data: [{
+                        type: "line",
+                        name: "Temperatuur",
+                        xValueFormatString: "DD/MM/YY hh:mm:ss",
+                        xValueType: "dateTime",
+                        yValueFormatString: "## °C",
+                        showInLegend: true,
+                        markerSize: 5,
+                        dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                    },{
+                        type: "line",
+                        name: "Vochtigheid",
+                        xValueFormatString: "DD/MM/YYYY hh:mm:ss",
+                        xValueType: "dateTime",
+                        yValueFormatString: "##,## %",
+                        showInLegend: true,
+                        markerSize: 5,
+                        dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
+                    }]
+                };
 
-                legend: {
-                    cursor: "pointer",
-                    itemclick: toggleDataSeries
-                },
+                $("#chartContainer").CanvasJSChart(options);
 
-                data: [{
-                    type: "line",
-                    name: "Temperatuur",
-                    markerSize: 5,
-                    xValueFormatString: "DD/MM/YYYY hh:mm:ss",
-                    xValueType: "dateTime",
-                    yValueFormatString: "## °C",
-                    showInLegend: true,
-                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                },{
-                    type: "line",
-                    name: "Vochtigheid",
-                    markerSize: 5,
-                    xValueFormatString: "DD/MM/YYYY hh:mm:ss",
-                    xValueType: "dateTime",
-                    yValueFormatString: "##,##%",
-                    showInLegend: true,
-                    dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
-                }]
-            };
-
-            $("#chartContainer").CanvasJSChart(options);
-
-            function toggleDataSeries(e) {
-                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                    e.dataSeries.visible = false;
-                } else {
-                    e.dataSeries.visible = true;
+                function toggleDataSeries(e) {
+                    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                        e.dataSeries.visible = false;
+                    } else {
+                        e.dataSeries.visible = true;
+                    }
+                    e.chart.render();
                 }
-                e.chart.render();
             }
-            }
-
         </script>
-
     </head>
     <body>
         <div id="chartContainer" style="height: 70%; width: 100%;"></div>
