@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+
 <?php 
 
 $servername = "localhost";
@@ -11,33 +12,26 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+
 $begin = $_POST["inputBegindag"];
 $eind = $_POST["inputEinddag"];
 
-$sensor1 = 'no';
-$sensor2 = 'no';
-$sensor1 = $_POST["inputSensor1"];
-$sensor2 = $_POST["inputSensor2"];  //er is nog een probleem als je een vak je niet aanduidt 'Notice: Undefined index: inputSensor2 in'
 
-if(empty($_POST['inputBegindag']) && empty($_POST['inputEinddag']) && empty($_POST["inputSensor1"]) && empty($_POST["inputSensor2"]))
+if(empty($_POST['inputBegindag']) && empty($_POST['inputEinddag']))
 {
-    if ($sensor1 != 'yes' && $sensor2 != 'yes' || $sensor1 == 'yes' && $sensor2 == 'yes')
-    {
-        $sql="SELECT * FROM GegevensIOT";
-    }
-    else if ($sensor1 == 'yes' && $sensor2 == 'no')
-    {
-        $sql="SELECT * FROM GegevensIOT WHERE SensorID = '$sensor1'";
-    }
-    else if ($sensor1 == 'no' && $sensor2 == 'yes')
-    {
-        $sql="SELECT * FROM GegevensIOT WHERE SensorID = '$sensor2'";
-    }
-    
+    $sql="SELECT * FROM GegevensIOT WHERE SensorID = 1";
 }else
 {
     $sql="SELECT * FROM GegevensIOT WHERE DatumUpload BETWEEN '$begin' AND '$eind'";
 }
+
+
+
+
+//#07/01/1996#
+//$sql="SELECT * FROM GegevensIOT WHERE SensorID = 1";
+//$sql="SELECT * FROM GegevensIOT WHERE DatumUpload BETWEEN begindag AND einddag";
+
 $result = mysqli_query($conn,$sql);
 
 $dataPoints = array();
@@ -89,7 +83,7 @@ mysqli_close($conn);
                     data: [{
                         type: "line",
                         name: "Temperatuur",
-                        xValueFormatString: "DD/MM/YY h:mm:ss",  // AM/PM nog uitzoeken
+                        xValueFormatString: "DD/MM/YY hh:mm:ss",
                         xValueType: "dateTime",
                         yValueFormatString: "## °C",
                         showInLegend: true,

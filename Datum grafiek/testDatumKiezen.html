@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Kies een begindag en een einddag voor de uiteinden van de grafiek</h3>
+
+<form action="testDatumKiezen.php" method="post">
+  <label for="begindag">Begindag:</label>
+  //<input type="text" name="inputBegindag">
+  <input type="tel" id="phone" name="inputBegindag" placeholder="2022-01-31" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required><br><br>
+  <small>Format: 2022-01-31</small><br><br>
+  
+  <br><br>
+  <label for="einddag">Einddag: &nbsp; </label>   <!-- '&nbsp;' is een spatie -->
+  <input type="text" name="inputEinddag">
+  <br><br>
+  <input type="submit">
+</form>
+
+
+
+</body>
+</html>
+
+/*
+<input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
+  <small>Format: 123-45-678</small><br><br>
+
+
+  <form action="/action_page.php">
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1"> I have a bike</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <label for="vehicle2"> I have a car</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> I have a boat</label><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  */
