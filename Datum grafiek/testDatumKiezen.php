@@ -25,13 +25,6 @@ if(empty($_POST['inputBegindag']) && empty($_POST['inputEinddag']))
     $sql="SELECT * FROM GegevensIOT WHERE DatumUpload BETWEEN '$begin' AND '$eind'";
 }
 
-
-
-
-//#07/01/1996#
-//$sql="SELECT * FROM GegevensIOT WHERE SensorID = 1";
-//$sql="SELECT * FROM GegevensIOT WHERE DatumUpload BETWEEN begindag AND einddag";
-
 $result = mysqli_query($conn,$sql);
 
 $dataPoints = array();

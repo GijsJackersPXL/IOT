@@ -2,5 +2,5 @@
 - selecteren in de grafiek tussen id1 of id2 
 
 
-- comentaar van Bart:
+- commentaar van Bart:
 ...

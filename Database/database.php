@@ -12,9 +12,6 @@
     $input = $_POST['waarde'];
 
     $sql = "INSERT INTO GegevensIOT(SensorID, WaardeSensor, DatumUpload, Tijd)  VALUES ('AUTO_INCREMENT', $input, now(), now())";
-    
-    //"INSERT INTO GegevensIOT(SensorID, WaardeSensor, DatumUpload, Tijd) VALUES ('AUTO_INCREMENT', '123', now(), now())";
-    //"INSERT INTO GegevensIOT(SensorID, WaardeSensor, DatumUpload, Tijd)  VALUES ('AUTO_INCREMENT','" . $_GET['waarde'] . "', now(), now())";
 
     if($conn->query($sql) === TRUE)
     {
