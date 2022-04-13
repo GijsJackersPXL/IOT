@@ -23,7 +23,7 @@
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }else{
-        echo "Waarde moet een inhoud hebben";
+        echo "Fout!!! \n Waarde moet een inhoud hebben";
     }
 
     $conn->close();
