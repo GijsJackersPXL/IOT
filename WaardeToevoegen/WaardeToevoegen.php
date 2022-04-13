@@ -14,7 +14,7 @@
 
     //input inlezen
     if ($input != ''){ 
-        $sql = "insert into GegevensIOT (SensorID, WaardeSensor, DatumUpload) values('1', '$input', now())";
+        $sql = "insert into IOT_GEGEVENS (SensorID, WaardeSensor, DatumUpload) values('1', '$input', now())";
         
         if ($conn->query($sql) === TRUE){
             echo "New record created successfully";

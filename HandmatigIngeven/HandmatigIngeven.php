@@ -15,8 +15,7 @@
     
     //input inlezen
     if (isset( $_GET['WaardeSensor']) && $_GET['WaardeSensor'] != ''){
-        $sql = "insert into IOT_GEGEVENS (WaardeSensor, Naam, DatumUpload) 
-                values('" . $_GET['WaardeSensor'] . "', 'Website', now())";
+        $sql = "insert into IOT_GEGEVENS (WaardeSensor, Naam, DatumUpload) values('" . $_GET['WaardeSensor'] . "', 'Website', now())";
         
         if ($conn->quey($sql) === TRUE){
             echo "New record created successfully";

@@ -5,7 +5,7 @@ $wachtwoord = $_POST["password"];
 
 if($naam == "Gijs" && $wachtwoord == "admin")
 {
-	header("Location: index.html");
+	header("Location: WaardeToevoegen.html");
 	exit();
 }
 else

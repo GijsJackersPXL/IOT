@@ -1,5 +1,4 @@
 <?php
-
 $jsonfile = file_get_contents("https://api.openweathermap.org/data/2.5/weather?q=Riemst&appid=b88e8a4d3b3a06798583071cab85454c&units=metric");
 $jsondata = json_decode($jsonfile);
 $api_Temperatuur = $jsondata->main->temp;
@@ -19,8 +18,4 @@ echo "Minimum temperatuur: ", $api_minTemp, " &degC <br>";
 echo "Maximum temperatuur: ",$api_maxTemp, " &degC <br>";
 echo "Windkracht: ", $api_Wind, " m/s <br>";
 echo "Vochtigheid: ", $api_Vochtigheid, " % <br>";
-
-echo "<br><br>";
-echo $api_desc, "<br>";
-
 ?>
