@@ -11,36 +11,10 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$begin = $_POST["inputBegindag"];
-$eind = $_POST["inputEinddag"];
-
-$sensor1 = 'no';
-$sensor2 = 'no';
-$sensor1 = $_POST["inputSensor1"];
-$sensor2 = $_POST["inputSensor2"];  //er is nog een probleem als je een vak je niet aanduidt 'Notice: Undefined index: inputSensor2 in'
-
-if(empty($_POST['inputBegindag']) && empty($_POST['inputEinddag']) && empty($_POST["inputSensor1"]) && empty($_POST["inputSensor2"]))
-{
-    if ($sensor1 != 'yes' && $sensor2 != 'yes' || $sensor1 == 'yes' && $sensor2 == 'yes')
-    {
-        $sql="SELECT * FROM GegevensIOT";
-    }
-    else if ($sensor1 == 'yes' && $sensor2 == 'no')
-    {
-        $sql="SELECT * FROM GegevensIOT WHERE SensorID = '$sensor1'";
-    }
-    else if ($sensor1 == 'no' && $sensor2 == 'yes')
-    {
-        $sql="SELECT * FROM GegevensIOT WHERE SensorID = '$sensor2'";
-    }
-    
-}else
-{
-    $sql="SELECT * FROM GegevensIOT WHERE DatumUpload BETWEEN '$begin' AND '$eind'";
-}
+$sql="SELECT * FROM IOT_GEGEVENS WHERE SensorID = '1 '";
 $result = mysqli_query($conn,$sql);
 
-$dataPoints = array();
+ $dataPoints = array();
 
 while($row = mysqli_fetch_array($result)) {
 	$Time = strtotime($row['DatumUpload'])*1000;
@@ -48,7 +22,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 
 
-$sql="SELECT * FROM GegevensIOT WHERE SensorID = 2";
+$sql="SELECT * FROM IOT_GEGEVENS WHERE SensorID = '2'";
 $result = mysqli_query($conn,$sql);
 
 $dataPoints2=array();
@@ -56,7 +30,7 @@ $dataPoints2=array();
 while($row = mysqli_fetch_array($result)) {
 	$Time = strtotime($row['DatumUpload'])*1000;
 	$dataPoints2[] = array("x"=>$Time,"y"=>$row['WaardeSensor']);
-}
+} 
 
 mysqli_close($conn);
 ?>

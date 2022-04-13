@@ -4,7 +4,7 @@
     $password = "oBrGCikWH85f";
     $dbname ="student_11901795";
 
-    //$sql = "INSERT INTO GegevensIOT (SensorID, WaardeSensor, Naam, Locatie, Plaats, Land, Email, DatumUpload, Tijd)
+    //$sql = "INSERT INTO IOT_GEGEVENS (SensorID, WaardeSensor, Naam, Locatie, Plaats, Land, Email, DatumUpload, Tijd)
     //VALUES (1,'10.6', 'Gijs Jackers', 'Riemst', 'Thuis', 'België', 'gijs.jackers@student.pxl.be', Now(),Now());
     
     //create connection
@@ -15,7 +15,7 @@
     
     //input inlezen
     if (isset( $_GET['WaardeSensor']) && $_GET['WaardeSensor'] != ''){
-        $sql = "insert into GegevensIOT (WaardeSensor, Naam, DatumUpload) 
+        $sql = "insert into IOT_GEGEVENS (WaardeSensor, Naam, DatumUpload) 
                 values('" . $_GET['WaardeSensor'] . "', 'Website', now())";
         
         if ($conn->quey($sql) === TRUE){
@@ -27,7 +27,7 @@
     }
     
     //output printen
-    $sql = "select SensorID, WaardeSensor from GegevensIOT";
+    $sql = "select SensorID, WaardeSensor from IOT_GEGEVENS";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0){

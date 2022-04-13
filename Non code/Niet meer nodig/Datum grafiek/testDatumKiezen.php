@@ -19,10 +19,10 @@ $eind = $_POST["inputEinddag"];
 
 if(empty($_POST['inputBegindag']) && empty($_POST['inputEinddag']))
 {
-    $sql="SELECT * FROM GegevensIOT WHERE SensorID = 1";
+    $sql="SELECT * FROM IOT_GEGEVENS WHERE SensorID = 1";
 }else
 {
-    $sql="SELECT * FROM GegevensIOT WHERE DatumUpload BETWEEN '$begin' AND '$eind'";
+    $sql="SELECT * FROM IOT_GEGEVENS WHERE DatumUpload BETWEEN '$begin' AND '$eind'";
 }
 
 $result = mysqli_query($conn,$sql);
@@ -35,7 +35,7 @@ while($row = mysqli_fetch_array($result)) {
 }
 
 
-$sql="SELECT * FROM GegevensIOT WHERE SensorID = 2";
+$sql="SELECT * FROM IOT_GEGEVENS WHERE SensorID = 2";
 $result = mysqli_query($conn,$sql);
 
 $dataPoints2=array();

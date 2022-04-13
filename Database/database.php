@@ -11,7 +11,7 @@
 
     $input = $_POST['waarde'];
 
-    $sql = "INSERT INTO GegevensIOT(SensorID, WaardeSensor, DatumUpload, Tijd)  VALUES ('AUTO_INCREMENT', $input, now(), now())";
+    $sql = "INSERT INTO IOT_GEGEVENS(SensorID, WaardeSensor, DatumUpload, Tijd)  VALUES ('AUTO_INCREMENT', $input, now(), now())";
 
     if($conn->query($sql) === TRUE)
     {
