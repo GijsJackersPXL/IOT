@@ -10,11 +10,12 @@
         die("connection failed: " . $conn->connect-error);
     }
 
-    $input = $_POST['waarde'];
-
+    $waarde = $_POST['waarde'];
+    $sensorID = $_POST['SensorID'];
+    
     //input inlezen
-    if ($input != ''){ 
-        $sql = "insert into IOT_GEGEVENS (SensorID, WaardeSensor, DatumUpload) values('1', '$input', now())";
+    if ($waarde != '' && $sensorID != ''){ 
+        $sql = "insert into IOT_GEGEVENS (SensorID, WaardeSensor, DatumUpload) values('$sensorID', '$waarde', now())";
         
         if ($conn->query($sql) === TRUE){
             echo "New record created successfully";
@@ -23,7 +24,7 @@
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }else{
-        echo "Fout!!! \n Waarde moet een inhoud hebben";
+        echo "Fout!!! \n Er klopt iets niet...";
     }
 
     $conn->close();

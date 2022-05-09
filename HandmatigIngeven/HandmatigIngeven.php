@@ -4,9 +4,6 @@
     $password = "oBrGCikWH85f";
     $dbname ="student_11901795";
 
-    //$sql = "INSERT INTO IOT_GEGEVENS (SensorID, WaardeSensor, Naam, Locatie, Plaats, Land, Email, DatumUpload, Tijd)
-    //VALUES (1,'10.6', 'Gijs Jackers', 'Riemst', 'Thuis', 'België', 'gijs.jackers@student.pxl.be', Now(),Now());
-    
     //create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn -> connect_error){
@@ -14,8 +11,8 @@
     }
     
     //input inlezen
-    if (isset( $_GET['WaardeSensor']) && $_GET['WaardeSensor'] != ''){
-        $sql = "insert into IOT_GEGEVENS (WaardeSensor, Naam, DatumUpload) values('" . $_GET['WaardeSensor'] . "', 'Website', now())";
+    if (isset( $_GET['WaardeSensor']) && $_GET['WaardeSensor'] != '' && isset( $_GET['SensorID']) && $_GET['SensorID'] != ''){
+        $sql = "insert into IOT_GEGEVENS (SensorID, WaardeSensor, DatumUpload) values( '" . $_GET['SensorID'] . "', '" . $_GET['WaardeSensor'] . "', now())";
         
         if ($conn->quey($sql) === TRUE){
             echo "New record created successfully";
