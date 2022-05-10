@@ -33,6 +33,4 @@
     }
     echo "</table>";
     $stmt->close();
-
-
 ?>
