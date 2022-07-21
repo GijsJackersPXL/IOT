@@ -9,8 +9,7 @@
     if ($conn -> connect_error){
         die("connection failed: " . $conn->connect-error);
     }
-    // $sql = mysqli_query($conn,'SELECT AVG(WaardeSensor) FROM IOT_GEGEVENS');
-    
+   
     $input = $_POST["ids"];
 
     if ($input == 1){
