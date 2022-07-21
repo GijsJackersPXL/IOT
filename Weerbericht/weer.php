@@ -9,7 +9,6 @@ $minTemp = $jsondata->main->temp_min;
 $maxTemp = $jsondata->main->temp_max;
 $Wind = $jsondata->wind->speed;
 $Vochtigheid = $jsondata->main->humidity;
-//$desc = $jsondata->weather[0]->description;
 
 echo "<H2>Het weer in Riemst: </H2>";
 echo "Wat voor weer is het in Riemst: ", $soortWeer, "<br>";

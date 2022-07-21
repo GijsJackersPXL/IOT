@@ -9,27 +9,18 @@
     if ($conn -> connect_error){
         die("connection failed: " . $conn->connect-error);
     }
+    // $sql = mysqli_query($conn,'SELECT AVG(WaardeSensor) FROM IOT_GEGEVENS');
     
-    $sql = "SELECT AVG(WaardeSensor) FROM IOT_GEGEVENS WHERE SensorID = 1";
-    
-    //$result = mysql_query("SELECT AVG(fieldName) AS avg FROM tableName");
-    $row = mysql_fetch_assoc($sql);
-    echo $row;
+    $input = $_POST["ids"];
 
-
-
-/*     $sql = "SELECT SensorID, WaardeSensor, DatumUpload FROM IOT_GEGEVENS WHERE SensorID = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $_GET['SensorID']);
-    $stmt->execute();
-    $stmt->store_result();
-    $stmt->bind_result($SensorID, $WaardeSensor, $DatumUpload);
-    
-    while($row = $stmt->fetch())
-    {
-        echo "DatumUpload: ", $DatumUpload, "<br>";
-        echo "WaardeSensor: ", $WaardeSensor, "<br> <br>";
+    if ($input == 1){
+        $sql = mysqli_query($conn,'SELECT AVG(WaardeSensor) FROM IOT_GEGEVENS WHERE SensorID = 1');
+    }elseif ($input == 2){
+        $sql = mysqli_query($conn,'SELECT AVG(WaardeSensor) FROM IOT_GEGEVENS WHERE SensorID = 2');
     }
-    $stmt->close();
- */
+
+    while($row = mysqli_fetch_array($sql)){
+        echo $row['AVG(WaardeSensor)'].'<br>';
+    }
+
 ?>

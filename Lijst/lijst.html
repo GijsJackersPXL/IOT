@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 
 <html>
-<!-- <head>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	</head>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<h2>Tabelgegevens</h2>
+<!-- 
+	<form action=""> 
+		<select name="ids" onchange="showids(this.value)">
+			<option value="">Kies een id:</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+		</select>
+	</form>
+	<br>
+	<div id="txtHint">Gegevens zullen hier weergegeven worden</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script>
+		//zal de waarde van lijst met id 1 of 2 terug geven
+		function showids(str) {
+			var xhttp;  
+			if (str == "") {
+				document.getElementById("txtHint").innerHTML = "";
+				return;
+			}
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("txtHint").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", "lijst.php?SensorID="+str, true);
+			xhttp.send();
+		}
+	</script> -->
 
-</head> -->
+	<form action="lijst.php" method="post"> 
+		<select name="ids">
+			<option value="">Kies een id:</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+		</select>
+		<button type="submit">Login</button>
+	</form>
 
-<h2>Tabelgegevens</h2>
-
-<form action=""> 
-  <select name="ids" onchange="showids(this.value)">
-    <option value="">Kies een id:</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-  </select>
-</form>
-<br>
-<div id="txtHint">Gegevens zullen hier weergegeven worden</div>
-
-<script>
-function showids(str) {
-  var xhttp;  
-  if (str == "") {
-    document.getElementById("txtHint").innerHTML = "";
-    return;
-  }
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("txtHint").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "lijst.php?SensorID="+str, true);
-  xhttp.send();
-}
-</script>
-
-
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-
-<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-
-<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
-
-
-
-</body>
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+	<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+	</body>
 
 </html>

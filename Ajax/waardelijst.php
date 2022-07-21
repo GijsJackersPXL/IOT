@@ -10,7 +10,7 @@
         die("connection failed: " . $conn->connect-error);
     }
 
-    $SensorID = "2";
+    $SensorID = "1";
 
     $sql = "SELECT SensorID, WaardeSensor, DatumUpload FROM IOT_GEGEVENS WHERE SensorID = ?";
     $stmt = $conn->prepare($sql);

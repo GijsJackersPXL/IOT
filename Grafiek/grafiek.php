@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 $sql="SELECT * FROM IOT_GEGEVENS WHERE SensorID = '1 '";
 $result = mysqli_query($conn,$sql);
 
- $dataPoints = array();
+$dataPoints = array();
 
 while($row = mysqli_fetch_array($result)) {
 	$Time = strtotime($row['DatumUpload'])*1000;
@@ -93,6 +93,7 @@ mysqli_close($conn);
                 }
             }
         </script>
+        
     </head>
     <body>
         <div id="chartContainer" style="height: 70%; width: 100%;"></div>
