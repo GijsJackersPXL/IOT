@@ -1,7 +1,7 @@
 # IOT
 
 #### VRAAG 1 Geef de link naar de GitHub waar de code staat van de standalone embedded devices of een simulatie programma ervoor
-- 
+- https://github.com/GijsJackersPXL/IOT/tree/main/DataVerzamelen
 	
 #### VRAAG 2 (1/5) Geef de link waarmee je manueel gegevens kunt toevoegen en toon aan dat je een week aan gegevens hebt
 
@@ -12,32 +12,32 @@ Week aan data:
 - [grafiek.php](https://11901795.pxl-ea-ict.be/grafiek.php) 
 
 #### VRAAG 3 (4/5) Geef de SQL code van de databasestuctuur met minstens 2 tabellen
-SQL code van de **databasestuctuur.txt**
+- SQL code van de **databasestuctuur.txt**
 
 #### VRAAG 4 (LIJN IS OPGELOST(4/5) 
 Lijn opgelost:heavy_check_mark:
 
-Link naar de grafiek
-[grafiek.php](https://11901795.pxl-ea-ict.be/grafiek.php)  
+Link naar de grafiek:
+- [grafiek.php](https://11901795.pxl-ea-ict.be/grafiek.php)  
 
 #### VRAAG 5 (5/5) Geef enkel het stukje code dat zorgt dat je graffieklijnen kunt togglen.
-code graffieklijnen togglen.txt
+- code graffieklijnen togglen.txt
 
 #### VRAAG 6 (5/5) Beschrijf hoe je kan inzoomen op de graffiek
-Ga met je muis op de waardes in de tabel staan en klik & sleep tot waar je wilt vergroten.
+- Ga met je muis op de waardes in de tabel staan en klik & sleep tot waar je wilt vergroten.
 
 #### VRAAG 7 Geef een link waar een AJAX call naartoe wijst
-[grafiek.html](https://11901795.pxl-ea-ict.be/grafiek.html)  Het laten zien/verbergen van het weerbericht (regel 14-29).
+- [grafiek.html](https://11901795.pxl-ea-ict.be/grafiek.html)  Het laten zien/verbergen van het weerbericht (regel 14-29).
 
 Of 
 
-[waardelijst.php](https://11901795.pxl-ea-ict.be/waardelijst.php)
+- [waardelijst.php](https://11901795.pxl-ea-ict.be/waardelijst.php)
 	
 #### VRAAG 8 Geef de link naar de dynamische RSS feed
-[rss.php](https://11901795.pxl-ea-ict.be/rss.php)
+- [rss.php](https://11901795.pxl-ea-ict.be/rss.php)
 
 #### VRAAG 9 Geef de link waar de JSON gegevens te vinden zijn
-[weer.php](https://11901795.pxl-ea-ict.be/weer.php) 
+- [weer.php](https://11901795.pxl-ea-ict.be/weer.php) 
 
 #### VRAAG 10 Geef de link naar de GitHub Readme met flowchart
 ![image](https://user-images.githubusercontent.com/56915241/185166121-58bdca6d-09e5-4e53-b4b1-fa0101e728f6.png)
@@ -49,9 +49,11 @@ Was vorige keer al inorde
 [commits](https://github.com/GijsJackersPXL/IOT/commits/main)
 
 #### VRAAG 12 Geef de link naar welke API je gebruikt en de link waar ze geïntegreerd is.
-Link  data van openweathermap API: [openweathermap.org](https://api.openweathermap.org/data/2.5/weather?q=Tessenderlo&appid=b88e8a4d3b3a06798583071cab85454c&units=metric) 
+Link  data van openweathermap API: 
+- [openweathermap.org](https://api.openweathermap.org/data/2.5/weather?q=Tessenderlo&appid=b88e8a4d3b3a06798583071cab85454c&units=metric) 
 		
-Gebruikt in: [weer.php](https://11901795.pxl-ea-ict.be/weer.php)
+Gebruikt in: 
+- [weer.php](https://11901795.pxl-ea-ict.be/weer.php)
 
 #### VRAAG 13(5/40) Geef voor elk deel dat je extra gedaan hebt een link en paar woorden uitleg.
 
