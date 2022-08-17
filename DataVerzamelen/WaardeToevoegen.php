@@ -10,8 +10,8 @@
         die("connection failed: " . $conn->connect-error);
     }
 
-    $waarde = $_POST['waarde'];
-    $sensorID = $_POST['SensorID'];
+    $waarde = $_GET['waarde'];
+    $sensorID = $_GET['SensorID'];
     
     //input inlezen
     if ($waarde != '' && $sensorID != ''){ 
@@ -26,6 +26,6 @@
     }else{
         echo "Fout!!! \n Er klopt iets niet...";
     }
-        
+
     $conn->close();
-    ?>
+?>
