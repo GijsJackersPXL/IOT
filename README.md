@@ -40,6 +40,8 @@ Of
 [weer.php](https://11901795.pxl-ea-ict.be/weer.php) 
 
 #### VRAAG 10 Geef de link naar de GitHub Readme met flowchart
+![image](https://user-images.githubusercontent.com/56915241/185166121-58bdca6d-09e5-4e53-b4b1-fa0101e728f6.png)
+
 [flowchart.png](https://github.com/GijsJackersPXL/IOT/blob/main/flowchart.png)
 
 #### VRAAG 11 (5/5) Geef de link naar de overzicht van alle commits voor dit project
