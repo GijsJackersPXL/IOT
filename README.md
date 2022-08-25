@@ -57,7 +57,7 @@ Gebruikt in:
 
 ### VRAAG 13(5/40) Geef voor elk deel dat je extra gedaan hebt een link en paar woorden uitleg.
 
-<br><br>
+### Score: 54,00 /100
 
 ### Enkele nuttige linken: 
 
